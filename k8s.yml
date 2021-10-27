@@ -13,7 +13,7 @@ spec:
         app: kubernetes-datascience-launcher
     spec:
       containers:
-      - image: lingdu0001/jamovi:0.0.1
+      - image: jamovi/jamovi
         name: jamovi
         command: ["/bin/bash", "-c"]
         args:
@@ -34,6 +34,8 @@ spec:
   ports:
   - name: "kubernetes-datascience-launcher"
     port: 41337
+    port: 41338
+    port: 41339
   selector:
     app: kubernetes-datascience-launcher
 
