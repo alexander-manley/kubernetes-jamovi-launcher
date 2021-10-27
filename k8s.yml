@@ -13,14 +13,11 @@ spec:
         app: kubernetes-datascience-launcher
     spec:
       containers:
-      - image: databio/refgenieserver
-        name: refgenieserver
-        command: ["/bin/sh", "-c"]
+      - image: jamovi/jamovi
+        name: jamovi
+        command: ["/bin/bash", "-c"]
         args:
-         - apk add git -y;
-           ping 0.0.0.0;
- #      git clone https://github.com/alexander-manley/refgenieserver.git;
- #      refgenieserver serve -c refgenie.yaml;
+         - /usr/bin/python3 -m jamovi.server 41337 --if=*;
 
 
 
@@ -36,7 +33,7 @@ spec:
   type: ClusterIP  
   ports:
   - name: "kubernetes-datascience-launcher"
-    port: 80
+    port: 41337
   selector:
     app: kubernetes-datascience-launcher
 
