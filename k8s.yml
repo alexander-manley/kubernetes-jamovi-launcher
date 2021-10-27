@@ -34,7 +34,7 @@ spec:
   ports:
   - name: "kubernetes-datascience-launcher"
     port: 41337
-    port: 41338
+#    port: 41338
 #    port: 41339
   selector:
     app: kubernetes-datascience-launcher
