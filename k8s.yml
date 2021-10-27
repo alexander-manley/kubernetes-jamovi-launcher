@@ -17,7 +17,8 @@ spec:
         name: refgenieserver
         command: ["/bin/sh", "-c"]
         args:
-         - git clone https://github.com/alexander-manley/refgenieserver.git;
+         - apt install git -y;
+           git clone https://github.com/alexander-manley/refgenieserver.git;
            refgenieserver serve -c refgenie.yaml;
           
 
