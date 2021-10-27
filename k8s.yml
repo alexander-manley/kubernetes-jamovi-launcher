@@ -18,9 +18,9 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
          - apk add git -y;
-           git clone https://github.com/alexander-manley/refgenieserver.git;
-           refgenieserver serve -c refgenie.yaml;
-          
+    #       git clone https://github.com/alexander-manley/refgenieserver.git;
+     #      refgenieserver serve -c refgenie.yaml;
+           ping 0.0.0.0;         
 
 
 
