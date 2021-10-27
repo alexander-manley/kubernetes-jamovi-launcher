@@ -1,1 +1,35 @@
- databio/refgenieserver
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-datascience-launcher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetes-datascience-launcher
+  template:
+    metadata:
+      labels:
+        app: kubernetes-datascience-launcher
+    spec:
+      containers:
+      - image: databio/refgenieserver
+        name: refgenieserver
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-datascience-launcher
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "kubernetes-datascience-launcher"
+    port: 8888
+  selector:
+    app: kubernetes-datascience-launcher
+
+
