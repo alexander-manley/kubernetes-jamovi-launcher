@@ -28,7 +28,7 @@ kind: Service
 metadata:
   name: kubernetes-datascience-launcher
   annotations:
-    dev.okteto.com/auto-ingress: "false"
+    dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
